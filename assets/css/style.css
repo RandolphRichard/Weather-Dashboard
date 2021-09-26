@@ -1,0 +1,13 @@
+.header {
+    height: 80px;
+  
+    background-color: rgba(5, 17, 180, 0.76);
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    line-height: 140px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Abril Fatface', cursive;
+  }

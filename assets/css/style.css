@@ -26,6 +26,7 @@ background-image: url("../img/2.jpg");
 background-size: cover;
 background-position: 20%;
 color: white;
+text-align: center;
 
 /* background-color: cadetblue; */
 /* margin: 10px; */
@@ -45,14 +46,28 @@ color: white;
   }
 
   #cityViewed{
-      background-color: rgb(114, 109, 110);
+      background-color: rgb(161, 231, 114);
       cursor: pointer;
       border: none;
-      color: white;
+      color:blue;
       border-radius: 20px;
+     
+      text-align: center;
+      width:230px;
+      
+     
    
   }
 
+  .custom-border-bottom{
+    border-bottom: 2px solid silver; 
+    width: 100%;
+    margin-left:2px ;
+  }
+
   #cityViewed :hover{
-      background-color: yellow;
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1); 
+    text-align: center;
   }

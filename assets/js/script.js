@@ -48,10 +48,11 @@ function setCity(city) {
     //the label
     console.log(response);
     var cityLocation = response.weather[0].icon;
+    var imageDescription=response.weather[0].description;
 
     var labelSrc = "https://openweathermap.org/img/wn/" + cityLocation + "@2x.png";
-    var labelImage = $("<img>");
-    labelImage.attr("src", labelSrc);
+    var labelImage = $(`<img src="${labelSrc}"alt="${imageDescription}"/>`);
+    // labelImage.attr("src", labelSrc);
 
     $(".current-city").text(response.name + " (" + realDate + ")");
     $(".current-city").append(labelImage);
@@ -63,7 +64,7 @@ function setCity(city) {
     $(".forecastTempeture").text("Temperature (Kelvin) " + forecastTempeture);
     getUltraViolet(response.coord.lat, response.coord.lon);
     forecast(city);
-    input.val("");
+    $(".form-control").val("");
   });
 }
 
@@ -79,9 +80,9 @@ function displayCities() {
   $("#cityViewed").html("");
   for (var c = 0; c < limit; c++) {
     var cityViewed = $("<div>");
-    cityViewed.addClass("row").css({
+    cityViewed.addClass("row custom-border-bottom").css({
       textAlign: "center",
-      border: "1px solid silver",
+      // borderBottom: "1px solid silver",
       height: "50px",
       lineHeight: "50px",
       paddingLeft: "40px",

@@ -45,7 +45,7 @@ function setCity(city) {
   //set API data
 
   $.ajax({ url: weatherMapURL, type: "GET" }).then(function (response) {
-    //the label
+    //the label (icon)
     console.log(response);
     var cityLocation = response.weather[0].icon;
     var imageDescription=response.weather[0].description;
@@ -59,7 +59,7 @@ function setCity(city) {
     $("#TemperatureC").text("Tempeture : " + response.main.temp + " °F");
     $("#humidityC").text("Humidity : " + response.main.humidity + " %");
     $("#winShield").text("Wind Shiel Speed : " + response.wind.speed + " MPH");
-    // Converts the temp to Kelvin
+    // Converting the temp to Kelvin with formula
     var forecastTempeture = (response.main.TemperatureC - 273.15) * 1.8 + 32;
     $(".forecastTempeture").text("Temperature (Kelvin) " + forecastTempeture);
     getUltraViolet(response.coord.lat, response.coord.lon);
@@ -82,7 +82,7 @@ function displayCities() {
     var cityViewed = $("<div>");
     cityViewed.addClass("row custom-border-bottom").css({
       textAlign: "center",
-      // borderBottom: "1px solid silver",
+      // borders
       height: "50px",
       lineHeight: "50px",
       paddingLeft: "40px",
@@ -138,27 +138,27 @@ function forecast(city) {
       var year = date.getFullYear();
 
       var formatedDate = `${month + 1}/${day}/${year}`;
-      // Creating and storing a div tag
+      //  div tag
       var tab = $("<div>");
       tab.addClass("tab");
       var mylog = $("<div>");
       mylog.addClass("card");
       tab.append(mylog);
 
-      // Creating a paragraph tag with the response item
+      // Creating a <P> tag with the response item
       var upperTime = $("<p>").text(formatedDate);
       // set image tag
 
       var iconUrl = "https://openweathermap.org/img/wn/" + iconId + "@2x.png";
 
       var weatherImage = $("<img>");
-      // Setting attribute for the image
+      // attribute for the image
       weatherImage.attr("src", iconUrl);
 
       var underTemp = $("<p>").text("Temp: " + temp + "°F");
       var underHumidity = $("<p>").text("Humidity: " + humidity + "%");
 
-      // Appending the paragraph and image tag to mylog for the 5-Day Forecast
+      // Appending the <p> and image tag to mylog for the 5-Day Forecast
       mylog.append(upperTime);
       mylog.append(weatherImage);
       mylog.append(underTemp);

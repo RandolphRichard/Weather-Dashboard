@@ -29,6 +29,9 @@ THEN I am again presented with current and future conditions for that city
 * This Tool will really help you stay on track of the weather.
 * Just put the city, and It will give you the weather for the next 5 days
 * If UV lower than 2 (green), 5 (blue), 7 (orange), 10 (red), More than (Purple)
+* The UV conditions are favorable lower than 2 (green)
+* The UV conditions are moderate from 3 to 7. Depends on the level it will be (Blue or Orange)
+* The UV conditions are severe from 8+, Depends on the level it will be (Red or Purple)
 
 
 ## Website

@@ -58,7 +58,7 @@ function setCity(city) {
     $(".current-city").append(labelImage);
     $("#TemperatureC").text("Tempeture : " + response.main.temp + " °F");
     $("#humidityC").text("Humidity : " + response.main.humidity + " %");
-    $("#winShield").text("Wind Shiel Speed : " + response.wind.speed + " MPH");
+    $("#winShield").text("Wind Speed : " + response.wind.speed + " MPH");
     // Converting the temp to Kelvin with formula
     var forecastTempeture = (response.main.TemperatureC - 273.15) * 1.8 + 32;
     $(".forecastTempeture").text("Temperature (Kelvin) " + forecastTempeture);
@@ -109,7 +109,29 @@ function getUltraViolet(lat, lon) {
     lon +
     "&cnt=1";
   $.ajax({ url: ultravioletURL, type: "GET" }).then(function (response) {
-    $("#ultraVioletC").text("UV-index : " + response[0].value);
+    // var weatherDiv = $('<div class="weatherdiv">');
+
+    var indexVal= response[0].value
+       console.log(indexVal)
+            // var uvInd = $('<p>').html("UV Index: " + indexVal);
+           
+          
+            $("#ultraVioletC").empty()
+            $("#ultraVioletC").append(`<p>UV Index:<span class="indexValue">${indexVal}</span></p>`);
+
+            var uvInd=$(".indexValue");
+            if (indexVal >= 7) {
+              uvInd.addClass("badge badge-danger");
+            }
+            if (indexVal >= 4) {
+              uvInd.addClass("badge badge-danger");
+            } else {
+              uvInd.addClass("badge badge-success");
+            }
+
+            // weatherDiv.append(uvInd);
+         
+    // $("#ultraVioletC").text("UV-index : " + response[0].value);
   });
 }
 

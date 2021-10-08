@@ -28,6 +28,8 @@ THEN I am again presented with current and future conditions for that city
 * I didn't created it as the mockup, I added couple of pictures that relate to the weather.
 * This Tool will really help you stay on track of the weather.
 * Just put the city, and It will give you the weather for the next 5 days
+* If UV lower than 2 (green), 5 (blue), 7 (orange), 10 (red), More than (Purple)
+
 
 ## Website
 ![](/assets/img/3.png)

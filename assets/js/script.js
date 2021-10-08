@@ -112,6 +112,7 @@ function getUltraViolet(lat, lon) {
     // var weatherDiv = $('<div class="weatherdiv">');
 
     var indexVal= response[0].value
+ 
        console.log(indexVal)
             // var uvInd = $('<p>').html("UV Index: " + indexVal);
            
@@ -120,13 +121,19 @@ function getUltraViolet(lat, lon) {
             $("#ultraVioletC").append(`<p>UV Index:<span class="indexValue">${indexVal}</span></p>`);
 
             var uvInd=$(".indexValue");
-            if (indexVal >= 7) {
-              uvInd.addClass("badge badge-danger");
-            }
-            if (indexVal >= 4) {
-              uvInd.addClass("badge badge-danger");
-            } else {
+            if (indexVal <= 2) {
               uvInd.addClass("badge badge-success");
+            }
+            else if (indexVal <= 5) {
+              uvInd.addClass("badge badge-primary");
+            }
+            else if (indexVal <= 7) {
+              uvInd.addClass("badge badge-warning");
+            } 
+            else if (indexVal <= 10) {
+              uvInd.addClass("badge badge-danger");
+            }else {
+              uvInd.addClass("badge badge-purple");
             }
 
             // weatherDiv.append(uvInd);
